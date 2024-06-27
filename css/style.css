@@ -1,0 +1,130 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: white;
+}
+
+/* Page container styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  background-color: #00fbff; /* Orange header */
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Form styles */
+form {
+  background-color: #333; /* Dark grey background for form */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+form .form-group {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #444; /* Darker grey input background */
+  color: #fff; /* White text */
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #ff6600; /* Orange button */
+  border: none;
+  color: #fff; /* White text */
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 50px;
+}
+
+form button:hover {
+  background-color: #ff8533; /* Lighter orange on hover */
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd; /* Light grey border */
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #ff6600; /* Orange header */
+  color: #fff; /* White text */
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #000000; /* Light grey alternate row */
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333; /* Dark grey footer */
+  color: #fff; /* White text */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.form-group-2 {
+  text-align: center;
+  
+}
+
+.form-group-2 button {
+  background-color: #5cb85c;
+  border-spacing: 20px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust alignment as needed */
+  max-width: 1000px; /* Adjust max-width as needed */
+  margin: 0 auto; /* Center align container */
+  padding: 20px; /* Add padding for spacing */
+}
+

@@ -1,0 +1,8 @@
+{
+    "name": "bonny/simple_system",
+    "description": "seat cafe records",
+    "aurthor" : "Bonny Nakibinge",
+    "require": {
+        "tecnickcom/tcpdf": "^6.7"
+    }
+}
