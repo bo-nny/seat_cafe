@@ -14,9 +14,6 @@
         </header>
 
         <!-- Form to insert new transaction -->
-
-        <section>
-            <nav>
         <form method="POST" action="process.php">
             <div class="form-group">
                 <label for="cash">Cash:</label>
@@ -43,15 +40,14 @@
 
             </div>
         </form>
+
             <form method="post" action="generate.php">
                 <div class="form-group-2">
                 <button type="submit" name="submit" value="download_pdf">Download PDF</button>
-                <button type="submit" name="submit" value="download_pdf" style="background-color: red;"> Remove All Records</button>
+                <button type="submit" name="submit" value="remove_records" class="remove-records-button">Remove All Records</button>
                 </div>
             </form>
-            </nav>
 
-            
         <!-- Display data from database in a table -->
         <table>
             <thead>
