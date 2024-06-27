@@ -3,7 +3,7 @@
 require_once 'vendor/autoload.php';
 require_once 'db.php';
 
-// Extend TCPF with custom functions
+// Extend TCPDF with custom functions
 class MYPDF extends TCPDF {
 
     // Load data from database
@@ -49,10 +49,10 @@ class MYPDF extends TCPDF {
         foreach($data as $row) {
             $this->Cell($w[0], 6, $row['id'], 'LR', 0, 'L', $fill);
             $this->Cell($w[1], 6, $row['transaction_date'], 'LR', 0, 'L', $fill);
-            $this->Cell($w[2], 6, number_format($row['cash']), 'LR', 0, 'R', $fill);
-            $this->Cell($w[3], 6, number_format($row['card']), 'LR', 0, 'R', $fill);
-            $this->Cell($w[4], 6, number_format($row['total']), 'LR', 0, 'R', $fill);
-            $this->Cell($w[5], 6, number_format($row['expenditure']), 'LR', 0, 'R', $fill);
+            $this->Cell($w[2], 6, $row['cash'], 'LR', 0, 'R', $fill);
+            $this->Cell($w[3], 6, $row['card'], 'LR', 0, 'R', $fill);
+            $this->Cell($w[4], 6, $row['total'], 'LR', 0, 'R', $fill);
+            $this->Cell($w[5], 6, $row['expenditure'], 'LR', 0, 'R', $fill);
             $this->Cell($w[6], 6, $row['comment'], 'LR', 0, 'L', $fill);
             $this->Ln();
             $fill=!$fill;
@@ -70,10 +70,10 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', 'B', 14);
         $this->Cell(0, 10, "Totals Summary", 0, 1, 'C');
         $this->SetFont('helvetica', 'B', 12);
-        $this->Cell(0, 10, "Total Cash: " . number_format($total_cash), 0, 1, 'L');
-        $this->Cell(0, 10, "Total Card: " . number_format($total_card), 0, 1, 'L');
-        $this->Cell(0, 10, "Total Total: " . number_format($total_total), 0, 1, 'L');
-        $this->Cell(0, 10, "Total Expenditure: " . number_format($total_expenditure), 0, 1, 'L');
+        $this->Cell(0, 10, "Total Cash: " . $total_cash, 0, 1, 'L');
+        $this->Cell(0, 10, "Total Card: " . $total_card, 0, 1, 'L');
+        $this->Cell(0, 10, "Total Total: " . $total_total, 0, 1, 'L');
+        $this->Cell(0, 10, "Total Expenditure: " . $total_expenditure, 0, 1, 'L');
     }
 }
 
@@ -94,7 +94,6 @@ if ($conn->connect_error) {
 $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // Set document information
-// $pdf->SetCreator(SEAT_CAFE);
 $pdf->SetAuthor('Nazri Tamale');
 $pdf->SetTitle('Seat Cafe Report');
 $pdf->SetSubject('Transaction Report');
@@ -138,14 +137,9 @@ $header = array('ID', 'Date', 'Cash', 'Card', 'Total', 'Expenditure', 'Comment')
 
 // Data loading
 $data = $pdf->LoadDataFromDatabase($conn);
-// print_r($data); exit;
 
 // Print colored table
 $pdf->ColoredTable($header, $data);
-
-// Close and output PDF document
-// $pdf->Output('Monthly_report.pdf', 'I');
-
 
 // Get the current date in a desired format
 $currentDate = date('Ymd_His'); // Example format: YYYYMMDD_HHmmss

@@ -1,11 +1,17 @@
 <?php
-// Database connection parameters
-$hostname = 'localhost';
-$username = 'your_username';
-$password = 'your_password';
-$database_name = 'your_database';
+$authorized = true; // Example: Check user permissions
 
-// Connect to MySQL database
+if (!$authorized) {
+    echo "You are not authorized to perform this action.";
+    exit;
+}
+
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database_name = 'seat_cafe';
+
+// Create connection
 $conn = new mysqli($hostname, $username, $password, $database_name);
 
 // Check connection
@@ -13,17 +19,25 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Define the cutoff date (example: records older than 30 days)
-$cutoffDate = date('Y-m-d', strtotime('-30 days'));
+// SQL query to delete all records from the daily_transactions table
+$deleteSql = "DELETE FROM daily_transactions";
 
-// SQL query to delete records older than the cutoff date
-$sql = "DELETE FROM your_table WHERE transaction_date < '$cutoffDate'";
+// Execute the delete query
+if ($conn->query($deleteSql) === TRUE) {
+    echo "All records have been deleted from the database.<br>";
+    
+    // SQL query to reset auto-increment ID to 1
+    $alterSql = "ALTER TABLE daily_transactions AUTO_INCREMENT = 1";
 
-// Execute the query
-if ($conn->query($sql) === TRUE) {
-    echo "Records older than $cutoffDate have been cleaned from the database.";
+    // Execute the alter table query
+    if ($conn->query($alterSql) === TRUE) {
+        echo "Auto-increment ID reset to 1 successfully.<br>";
+        header("Location: index.php");
+    } else {
+        echo "Error resetting auto-increment ID: " . $conn->error . "<br>";
+    }
 } else {
-    echo "Error cleaning records: " . $conn->error;
+    echo "Error deleting records: " . $conn->error . "<br>";
 }
 
 // Close the database connection

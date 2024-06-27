@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Transactions</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./confirmDelete.js"></script>
 </head>
 <body>
 
@@ -41,12 +42,23 @@
             </div>
         </form>
 
-            <form method="post" action="generate.php">
+
+</div>
+            <!-- <form method="post" action="generate.php">
                 <div class="form-group-2">
                 <button type="submit" name="submit" value="download_pdf">Download PDF</button>
                 <button type="submit" name="submit" value="remove_records" class="remove-records-button">Remove All Records</button>
                 </div>
-            </form>
+            </form> -->
+
+            <div class="button-container">
+        <form method="post" action="generate.php">
+            <button type="submit" name="submit" value="download_pdf" class="download-button">Download PDF</button>
+        </form>
+        <form method="post" action="db_clean.php" onsubmit="return confirmDelete();">
+            <button type="submit" name="submit" value="remove_records" class="remove-button">Remove All Records</button>
+        </form>
+    </div>
 
         <!-- Display data from database in a table -->
         <table>

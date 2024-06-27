@@ -130,3 +130,27 @@ footer {
 .form-group-2 button:last-child {
   margin-left: 50px; /* Adjust this value to increase/decrease the space */
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-container form {
+  display: inline-block;
+  margin: 0;
+}
+.download-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.remove-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
