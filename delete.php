@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     echo "if (confirm('Are you sure you want to delete this record?')) {";
     echo "    window.location.href = 'delete_confirm.php?id=$id';";
     echo "} else {";
-    echo "    window.location.href = 'result.php';";  // Redirect back if canceled
+    echo "    window.location.href = 'result.php';";  
     echo "}";
     echo "</script>";
     

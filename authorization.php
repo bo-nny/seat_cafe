@@ -24,9 +24,6 @@ if ($result->num_rows > 0) {
     $_SESSION['username'] = $user;
     header("Location: home.php"); // Redirect to a dashboard page
 } else {
-    // Invalid credentials
-    //$_SESSION['error'] = "Invalid username or password.";
-    //header("Location: index.php"); // Redirect back to the login page
 
     $_SESSION['error'] = "Invalid username or password.";
     header("Location: index.php?error=1"); // Redirect back to the login page with error parameter

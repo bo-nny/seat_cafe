@@ -1,5 +1,5 @@
 <?php
-$authorized = true; // Example: Check user permissions
+$authorized = true; 
 
 if (!$authorized) {
     echo "You are not authorized to perform this action.";
