@@ -32,7 +32,7 @@ if ($conn->query($deleteSql) === TRUE) {
     // Execute the alter table query
     if ($conn->query($alterSql) === TRUE) {
         echo "Auto-increment ID reset to 1 successfully.<br>";
-        header("Location: index.php");
+        header("Location: home.php");
     } else {
         echo "Error resetting auto-increment ID: " . $conn->error . "<br>";
     }

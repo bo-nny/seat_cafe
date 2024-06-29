@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    VALUES ('$cash', '$card', '$total', '$expenditure', '$comment')";
 
     if ($conn->query($sql_insert) === TRUE) {
-        header("Location: index.php");
+        header("Location: home.php");
     } else {
         echo "Error: " . $sql_insert . "<br>" . $conn->error;
     }
