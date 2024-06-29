@@ -6,7 +6,7 @@ This project is a web-based system designed for a seat Cafe to manage daily reco
 1. **Login Page** - For user authentication.
 2. **Daily Record Management Page** - For recording daily records.
 3. **Results Page** - For viewing monthly records and storing records in monthly pdfs.
-![Logo](https://example.com/path/to/logo.png)
+![Logo]([https://example.com/path/to/logo.png](https://github.com/bo-nny/seat_cafe/blob/main/images/pexels-nastyasensei-66707-2575835.jpg))
 
 
 ## Folder Structure
