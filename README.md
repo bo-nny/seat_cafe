@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-This project is a web-based system designed for a cafe to manage daily transactions, user login, and viewing records. The system consists of three main pages:
+This project is a web-based system designed for a seat Cafe to manage daily records, user login, and viewing and storing monthly Records. The system consists of three main pages:
 1. **Login Page** - For user authentication.
-2. **Daily Record Management Page** - For recording daily transactions.
-3. **Results Page** - For viewing monthly records.
+2. **Daily Record Management Page** - For recording daily records.
+3. **Results Page** - For viewing monthly records and storing records in monthly pdfs.
 
 ## Folder Structure
 
@@ -37,7 +37,7 @@ project-folder/
 
 **File**: `index.php`
 
-- **Description**: This page allows the user to log in to the system.
+- **Description**: This page allows the Administrator to log in to the system.
 - **Main Components**:
   - **Logo**: Displays the cafe logo (located in the `images` folder).
   - **Login Form**: Includes fields for username and password.
@@ -48,11 +48,11 @@ project-folder/
 
 **File**: `home.php`
 
-- **Description**: This page allows the user to record daily transactions and manage records.
+- **Description**: This page allows the user to record daily records and manage records.
 - **Main Components**:
   - **Header**: Displays the title "Seat Cafe LogBook".
   - **Log Out Button**: Redirects the user to the login page.
-  - **Sidebar**: Contains buttons to view results, download PDF, and remove all records.
+  - **Sidebar**: Contains buttons to view results, download PDF, and remove all records for the database to start new monthly entries. 
   - **Form**: Includes fields for cash, card, total (hidden), expenditure, and comments.
 - **JavaScript**: `confirmDelete.js` for confirming record deletion.
 
