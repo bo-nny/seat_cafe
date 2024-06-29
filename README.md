@@ -80,4 +80,12 @@ project-folder/
    git clone https://github.com//.git
 
 
- 
+ ### Required Programs to Install
+
+1. **XAMPP**
+2. **PHP**
+3. **Composer**
+4. **Node.js and npm**
+### Optional
+
+- **Additional JavaScript Tools**
